@@ -1,0 +1,21 @@
+UnicoAssignment Execution Plan
+•	Wildfly 8.2.0
+•	Update the standalne.xml file to add below queue configuration under 
+<jms-destinations> tag - 
+	<jms-queue name="messageQueue">
+		<entry name="java:/jms/queue/messageQueue"/>
+</jms-queue>
+
+Steps for execution - 
+	Execute Restful Web service
+	Copy WAR under deployments folder of Wildfly.
+	Once deployed, to Send message run  NetClientPost.java as Java Application.
+	By default I have set one message in JSONService.java, if you need you can change.
+	NetClientPost.java class will return send message details.
+	To check queue messages run NetClientGet.java, here it will return all queue messages list.
+
+Execute SOAP Web service:
+•	Hit wsdl URL http://<hostName>:8080/UnicoAssignment /MySoapService?wsdl to check your soap service deployed correctly.
+•	Test all the methods from soap service using Soap UI.
+
+
